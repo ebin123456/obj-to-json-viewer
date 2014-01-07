@@ -1,0 +1,41 @@
+<style type="text/css">
+
+.pagination-page-info {
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    background: #6aa6ed;
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+}
+
+</style>
+
+{{ pagination.info|safe }}
+{{ pagination.links|safe }}
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+      <tr>
+        <td> loop.index + users.skip </td>
+        <td> user.name </td>
+        <td> user.email</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{{ pagination.links|safe }}
